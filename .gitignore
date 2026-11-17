@@ -155,3 +155,16 @@ vite.config.ts.timestamp-*
 .nx/cache
 .nx/workspace-data
 .nx/migrate-runs
+
+# Local browser test data and extension release files
+.DS_Store
+._*
+test-results/
+chrome-profile*/
+*.pem
+*.key
+*.p12
+*.pfx
+*.har
+*.crx
+*.zip

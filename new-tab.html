@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>タブ一覧</title>
+    <link rel="stylesheet" href="new-tab.css">
+    <script type="module" src="new-tab.js"></script>
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="toolbar-inner">
+        <h1>タブ一覧 <output id="count" aria-label="タブ数"></output></h1>
+        <div class="toolbar-tools">
+          <button id="bulk-capture" type="button">未撮影を一括撮影</button>
+          <label class="search">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="search" type="search" aria-label="タブを検索" placeholder="タイトル・URLを検索" autocomplete="off" spellcheck="false">
+          </label>
+        </div>
+      </div>
+      <p class="bulk-status" id="bulk-status" role="status" hidden></p>
+    </header>
+    <main>
+      <p class="error" id="error" role="alert" hidden></p>
+      <section class="grid" id="grid" aria-label="開いているタブ"></section>
+      <p class="empty" id="empty" hidden></p>
+    </main>
+
+    <template id="tab-card">
+      <article class="card">
+        <button class="open-tab" type="button">
+          <span class="preview">
+            <img class="placeholder" alt="" width="32" height="32" loading="lazy">
+            <span class="preview-text" hidden></span>
+            <img class="thumbnail" alt="" loading="lazy" decoding="async" hidden>
+            <span class="tab-status" hidden></span>
+          </span>
+          <span class="tab-title"></span>
+          <span class="tab-domain"></span>
+        </button>
+        <div class="actions">
+          <button class="reload-tab" type="button" title="再読み込み"><span aria-hidden="true">↻</span></button>
+          <button class="close-tab" type="button" title="閉じる"><span aria-hidden="true">×</span></button>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>
